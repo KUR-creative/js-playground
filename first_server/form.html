@@ -1,0 +1,50 @@
+<form action="http://localhost:3000/process_create"
+      method="post">
+  <p>
+    <input type="text" name="title">
+  </p>
+
+  <p>
+    <textarea name="desc"> </textarea>
+  </p>
+
+  <p>
+    <input type="submit"/>
+  </p>
+</form>
+
+<!--
+    http://localhost:3000/process_create?title=ppap&desc=bbab
+    input에는 ppap, textarea에는 bbab를 넣고 submit을 눌렀을 때
+    query string을 만들고 서버로 보낸다.
+    
+    form 태그는 action에 있는 서버로 
+    폼 안에 있는 컨트롤에 사용자가 입력한 정보를 query string 형태로 전송한다.
+    
+    주소에 데이터를 넣는 것은 좋지 않다.
+    query string을 통해서 서버의 정보를 생성, 읽기, 업데이트, 삭제 CRUD 할건데
+    그러면 넘 쉽게 되자너 ㅋㅋ
+    
+    서버에서 데이터를 가져올 때(get)는 query string을 쓰면 된다.
+    그러나 서버에 데이터를 CUD 할 때는 (서버가 수정될 때)
+    필요한 데이터를 URL로 보내서는 안 된다.
+    
+    method="POST"를 쓰면 URL에서 보이지 않게 되며,
+    매우매우 큰 데이터 또한 전송할 수 있게 된다.
+    (URL의 경우 무한한 길이를 허용하지 않는다)
+    
+    GET은 method="get"이거나, 생략되어 있을 때이다. - Read에서 쓴다.
+    POST는 method="post"이고, 서버를 수정하는 CUD에서 쓴다.
+
+     [Notes on GET]
+    Appends form-data into the URL in name/value pairs
+    The length of a URL is limited (about 3000 characters)
+    Never use GET to send sensitive data! (will be visible in the URL)
+    Useful for form submissions where a user wants to bookmark the result
+    GET is better for non-secure data, like query strings in Google
+
+     [Notes on POST]
+    Appends form-data inside the body of the HTTP request (data is not shown in URL)
+    Has no size limitations
+    Form submissions with POST cannot be bookmarked
+-->
