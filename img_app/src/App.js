@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 
 function App() {
-    const [name, setName] = useState("0");
+    const [name, setName] = useState("");
+    const [img, setImg] = useState("");
 
     //const atest = async e => {
     const atest = e => {
@@ -15,8 +16,9 @@ function App() {
         // https://developer.mozilla.org/ko/docs/Web/API/FileReader
         reader.addEventListener("load", e => {
             setName(f.name)
+            setImg(e.target.result)
         })
-        reader.readAsText(f)
+        reader.readAsDataURL(f)
     }
 
     return (
@@ -25,6 +27,7 @@ function App() {
             <input type="file" id="input" onChange={atest}/>
           </div>
           <h1>{name}</h1>
+          <img src={img} alt="not loaded"/>
         </div>
     );
 }
