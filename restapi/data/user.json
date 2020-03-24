@@ -1,10 +1,30 @@
 {
-  "first_user": {
-    "password": "first_pass",
-    "name": "abet"
-  },
-  "second_user":{
-    "password": "second_pass",
-    "name": "betty"
-  }
+	"first_user": {
+		"password": "first_pass",
+		"name": "abet"
+	},
+	"second_user": {
+		"password": "second_pass",
+		"name": "betty"
+	},
+	"NAME": {
+		"password": "bbab",
+		"name": "NAME"
+	},
+	"newuser": {
+		"password": "bbab",
+		"name": "NAME"
+	},
+	"n": {
+		"password": "bbab",
+		"name": "NAME"
+	},
+	"a": {
+		"password": "bbab",
+		"name": "NAME"
+	},
+	"aasd": {
+		"password": "bbab",
+		"name": "NAME"
+	}
 }
